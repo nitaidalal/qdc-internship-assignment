@@ -71,3 +71,35 @@ This will:
 - You are free to refactor small pieces if it helps you implement the tasks cleanly, but keep the overall structure recognizable.
 
 When you work on the implementation tasks, please follow TypeScript types carefully and think about how this would scale to more complex workflows (e.g., billing, delivery, prepaid packages) in a real QDC environment.
+
+
+## My Implementation
+
+This assignment was completed by extending the existing NestJS and React codebase.
+
+### Backend Changes
+
+* Added `getGarmentStatusSummary()` in `server/src/orders/orders.service.ts`.
+* Implemented a new endpoint: `GET /api/orders/summary`.
+* The endpoint returns a count of garments grouped by status across all orders.
+* Handles the edge case where no garments exist by returning an empty object.
+
+### Frontend Changes
+
+* Added garment status filtering functionality.
+* Introduced `selectedStatus` state in `client/src/App.tsx`.
+* Added a dropdown for filtering garments by status.
+* Updated `OrdersList.tsx` to display only garments matching the selected status.
+* Added a user-friendly message when no garments match the selected filter.
+
+### UI Improvements
+
+* Improved dashboard layout and spacing.
+* Added styled status badges for garment states.
+* Improved card-based presentation for orders.
+* Enhanced filter controls for better usability.
+
+### Additional Deliverables
+
+* Completed all theoretical questions in `ANSWERS.md`.
+* Preserved the existing project structure and TypeScript typing conventions.
